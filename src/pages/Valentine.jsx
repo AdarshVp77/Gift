@@ -78,8 +78,14 @@ function Valentine() {
       const yesBtn = document.querySelector('.btn-yes');
       const r = yesBtn?.getBoundingClientRect();
       if (!r) return;
-      setNoPosition({ left: r.right + 16, top: r.top + (r.height / 2) - 26 });
-    }, 0);
+      // For mobile, position below the Yes button
+      if (window.innerWidth <= 480) {
+        setNoPosition({ left: r.left, top: r.bottom + 10 });
+      } else {
+        // For desktop, position to the right
+        setNoPosition({ left: r.right + 16, top: r.top + (r.height / 2) - 26 });
+      }
+    }, 100);
     return () => clearTimeout(timer);
   }, [noPosition]);
 
