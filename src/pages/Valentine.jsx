@@ -74,18 +74,27 @@ function Valentine() {
   // Set an initial fixed position next to the Yes button
   useEffect(() => {
     if (noPosition) return;
-    const timer = setTimeout(() => {
+    
+    const setInitialPosition = () => {
       const yesBtn = document.querySelector('.btn-yes');
       const r = yesBtn?.getBoundingClientRect();
-      if (!r) return;
+      if (!r || r.width === 0) {
+        // If Yes button not ready, try again
+        setTimeout(setInitialPosition, 50);
+        return;
+      }
+      
       // For mobile, position below the Yes button
       if (window.innerWidth <= 480) {
         setNoPosition({ left: r.left, top: r.bottom + 10 });
       } else {
         // For desktop, position to the right
-        setNoPosition({ left: r.right + 16, top: r.top + (r.height / 2) - 26 });
+        setNoPosition({ left: r.right + 16, top: r.top + (r.height / 2) - 21 });
       }
-    }, 100);
+    };
+    
+    // Start positioning after a small delay
+    const timer = setTimeout(setInitialPosition, 200);
     return () => clearTimeout(timer);
   }, [noPosition]);
 

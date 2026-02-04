@@ -190,6 +190,11 @@
   position: fixed;
   transition: left 0.15s ease-out, top 0.15s ease-out;
   z-index: 20;
+  opacity: 0;
+}
+
+.btn-no[style*="left"] {
+  opacity: 1;
 }
 
 .btn-no:hover {
