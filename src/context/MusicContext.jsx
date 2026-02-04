@@ -16,7 +16,7 @@ export function MusicProvider({ children }) {
     <MusicContext.Provider value={{ playMusic }}>
       <video
         ref={videoRef}
-        src="/falling-for-you.mp4"
+        src="/Gift/falling-for-you.mp4"
         loop
         playsInline
         preload="auto"
