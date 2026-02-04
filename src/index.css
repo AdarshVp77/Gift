@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --valentine-pink: #ff6b9d;
+  --valentine-rose: #c44569;
+  --valentine-red: #e84393;
+  --valentine-soft: #ffeaa7;
+  --valentine-white: #fff5f7;
+  --valentine-dark: #2d132c;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}

@@ -1,0 +1,327 @@
+.celebration-page {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  padding: 2rem 1.5rem;
+  overflow: hidden;
+}
+
+.celebration-bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    #ffeaa7 0%,
+    #ff6b9d 30%,
+    #e84393 60%,
+    #2d132c 100%
+  );
+  background-size: 400% 400%;
+  animation: celebrationGradient 10s ease infinite;
+  z-index: 0;
+}
+
+@keyframes celebrationGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.celebration-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+  animation: celebrationIn 0.8s ease-out;
+}
+
+@keyframes celebrationIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.celebration-gif-wrap {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(45, 19, 44, 0.35);
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+}
+
+.celebration-gif {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+.celebration-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  color: #fff5f7;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 20px rgba(45, 19, 44, 0.4);
+  font-weight: 700;
+}
+
+.celebration-sub {
+  color: rgba(255, 245, 247, 0.95);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.romantic-lines {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.romantic-lines li {
+  font-family: 'Playfair Display', serif;
+  color: rgba(255, 245, 247, 0.95);
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  padding: 0.5rem 0;
+  line-height: 1.5;
+  animation: lineIn 0.5s ease-out both;
+}
+
+@keyframes lineIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.back-link {
+  display: inline-block;
+  color: rgba(255, 245, 247, 0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-4px);
+}
+
+/* ---------- Floating Lyrics ---------- */
+.floating-lyric {
+  position: fixed;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(135deg, #ffd700, #ffb347, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  pointer-events: none;
+  z-index: 1;
+  animation: lyricFade 4s ease-in-out;
+  font-weight: 600;
+  text-align: center;
+  max-width: 300px;
+  transform: translate(-50%, -50%);
+}
+
+.special-lyric {
+  font-size: clamp(2.5rem, 6vw, 3.5rem) !important;
+  background: linear-gradient(135deg, #8b0000, #dc143c, #b22222) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 700 !important;
+}
+
+@keyframes lyricFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* ---------- Song lyrics (Falling for You) ---------- */
+.song-section {
+  margin-bottom: 1.5rem;
+}
+
+.song-title {
+  font-size: 0.85rem;
+  color: rgba(255, 245, 247, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.lyrics-block {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.lyrics-block p {
+  font-family: 'Playfair Display', serif;
+  color: rgba(255, 245, 247, 0.95);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  line-height: 1.75;
+  margin: 0.4rem 0;
+}
+
+.lyrics-block p:first-child {
+  margin-top: 0;
+}
+
+.lyrics-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Responsive: tablet ---------- */
+@media (max-width: 768px) {
+  .celebration-page {
+    padding: 1.5rem 1rem;
+    min-height: 100dvh;
+  }
+
+  .celebration-content {
+    max-width: 95vw;
+  }
+
+  .celebration-gif-wrap {
+    margin-bottom: 1.25rem;
+    padding: 0.4rem;
+  }
+
+  .celebration-gif {
+    max-height: 240px;
+  }
+
+  .celebration-title {
+    font-size: clamp(1.5rem, 4.5vw, 1.9rem);
+  }
+
+  .romantic-lines li {
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  }
+
+  .lyrics-block {
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* ---------- Responsive: mobile ---------- */
+@media (max-width: 480px) {
+  .celebration-page {
+    padding: 1rem 0.75rem;
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .floating-lyric {
+    font-size: clamp(1.8rem, 4.5vw, 2.2rem);
+    max-width: 250px;
+  }
+
+  .special-lyric {
+    font-size: clamp(2.2rem, 5.5vw, 2.8rem) !important;
+  }
+
+  .celebration-content {
+    max-width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .celebration-gif-wrap {
+    border-radius: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .celebration-gif {
+    max-height: 200px;
+  }
+
+  .celebration-title {
+    font-size: 1.4rem;
+  }
+
+  .celebration-sub {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .romantic-lines {
+    margin-bottom: 1.5rem;
+  }
+
+  .romantic-lines li {
+    font-size: 0.95rem;
+    padding: 0.4rem 0;
+  }
+
+  .song-section {
+    margin-bottom: 1.25rem;
+  }
+
+  .lyrics-block {
+    padding: 1rem 1rem;
+    border-radius: 0.875rem;
+  }
+
+  .lyrics-block p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .back-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+}
+
+/* ---------- Large screens ---------- */
+@media (min-width: 1024px) {
+  .celebration-content {
+    max-width: 520px;
+  }
+
+  .celebration-gif {
+    max-height: 300px;
+  }
+}
